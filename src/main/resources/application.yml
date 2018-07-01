@@ -1,0 +1,37 @@
+#spring 相关配置
+spring:
+  datasource:
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/test?characterEncoding=UTF-8&autoReconnect=true
+        username: root
+        password: '123123'
+        #阿里druid连接池
+        type: com.alibaba.druid.pool.DruidDataSource
+        maxActive: 10
+        initialSize: 1
+        maxWait: 60000
+        minIdle: 1
+        timeBetweenEvictionRunsMillis: 60000
+        minEvictableIdleTimeMillis: 300000
+        validationQuery: select 'x'
+        testWhileIdle: true
+        testOnBorrow: false
+        testOnReturn: false
+        poolPreparedStatements: true
+        maxOpenPreparedStatements: 20
+
+# mybatis 相关配置
+mybatis:
+  mapperLocations: classpath*:com/wiggin/springboot/demo/mapping/*.xml
+  typeAliasesPackage: com.wiggin.springboot.demo.model
+
+# log 配置
+logging:
+  level: debug
+  file: ./log/blog.log
+  pattern:
+    file: '%d{yyyy/MM/dd-HH:mm} [%thread] %-5level %logger- %msg%n'
+    console: '%d{yyyy/MM/dd-HH:mm:ss} [%thread] %-5level %logger- %msg%n'
+server:
+  address: localhost
+  port: 1234
