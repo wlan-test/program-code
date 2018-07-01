@@ -6,6 +6,8 @@ import com.wiggin.springboot.demo.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
+
 /**
  * copyright 2015-2020
  *
@@ -21,6 +23,11 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public Student queryById(int id) {
-        return studentMapper.selectByPrimaryKey(id);
+        Student student = new Student();
+        student.setSex("男");
+        student.setDepartment("研发");
+        student.setName("wiggin");
+        student.setBirth(new Date());
+        return student;
     }
 }
