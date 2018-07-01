@@ -33,5 +33,4 @@ logging:
     file: '%d{yyyy/MM/dd-HH:mm} [%thread] %-5level %logger- %msg%n'
     console: '%d{yyyy/MM/dd-HH:mm:ss} [%thread] %-5level %logger- %msg%n'
 server:
-  address: localhost
-  port: 1234
+  port: 8899
