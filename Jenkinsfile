@@ -16,6 +16,7 @@ pipeline {
         stage('publish local') {
           steps {
             sh '''cp target/*.jar /home/tomcat/demo/
+sleep 5
 /home/tomcat/demo/demo.sh start'''
           }
         }
