@@ -21,8 +21,8 @@ pipeline {
         }
         stage('publish remote') {
           steps {
-            sh '''scp target/*.jar root@192.168.56.102:/root/demo2/
-ssh -T root@192.168.56.102  \'bash -s\' < /root/demo2/demo.sh start'''
+            sh '''scp target/*.jar root@192.168.56.102:/home/tomcat/demo/
+ssh -T tomcat@192.168.56.102  \'bash -s\' < /home/tomcat/demo/demo.sh start'''
           }
         }
       }
