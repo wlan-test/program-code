@@ -22,7 +22,8 @@ sleep 5
         }
         stage('publish remote') {
           steps {
-            sh '''scp target/*.jar tomcat@192.168.56.102:/home/tomcat/demo/
+            sh '''sleep 2
+scp target/*.jar tomcat@192.168.56.102:/home/tomcat/demo/
 ssh -T tomcat@192.168.56.102  \'bash -s\' < /home/tomcat/demo/demo.sh start'''
           }
         }
