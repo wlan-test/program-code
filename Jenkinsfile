@@ -16,14 +16,12 @@ pipeline {
         stage('publish local') {
           steps {
             sh '''cp target/*.jar /home/tomcat/demo/
-sleep 5
 /home/tomcat/demo/demo.sh start'''
           }
         }
         stage('publish remote') {
           steps {
-            sh '''sleep 2
-scp target/*.jar tomcat@192.168.56.102:/home/tomcat/demo/
+            sh '''scp target/*.jar tomcat@192.168.56.102:/home/tomcat/demo/
 ssh -T tomcat@192.168.56.102  \'bash -s\' < /home/tomcat/demo/demo.sh start'''
           }
         }
