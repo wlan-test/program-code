@@ -24,7 +24,7 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public Student queryById(int id) {
         Student student = new Student();
-        student.setSex("女");
+        student.setSex("男");
         student.setDepartment("客服");
         student.setName("xdclass-wiggin");
         student.setBirth(new Date());
