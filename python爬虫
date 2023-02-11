@@ -1,0 +1,7 @@
+text ="hello world ,I love the beautiful scence"
+split_result = text.split()
+result={}
+for word in split_result:
+   l= word.strip()
+   result[l]=result.get(1,0)+1
+print(result)
