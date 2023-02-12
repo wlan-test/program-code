@@ -24,11 +24,8 @@ pipeline {
         }
         stage('publish remote') {
           steps {
-            node(label: '102') {
-              sh '''cp target/*.jar /home/tomcat/demo/
-/home/tomcat/demo/demo.sh start'''
-            }
-
+            sh '''scp target/*.jar tomcat@192.168.56.102:/home/tomcat/demo/
+ssh -T tomcat@192.168.56.102  \'bash -s\' < /home/tomcat/demo/demo.sh start'''
           }
         }
       }
